@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>nestingif</title>
+	<script type="text/javascript">
+		
+        var chances=prompt("enter the number of chances you want to try");
+        
+
+		function students_allowed(){
+			var age= prompt("enter your age");
+
+			if(age>=18){
+				alert("click okey to proceed");
+				if(age<28){
+				    document.write("your have not atttained the minimum age to be allowed in this site");
+				}
+				else if(age>=32){
+					document.write("your age is past the limit we require");
+				}
+				else{
+					alert("welcome to this website. click okey to proceed");
+					if(age==29){
+						document.write("your the right person we needed in this site");
+
+					}
+					else{
+						document.write("though you have qualified here, you are not the right person we needed in this site");
+					}
+				}
+
+			}
+			else{
+				alert("sorry we dont allo children in this site");
+			}
+		    }
+		for(i=0;i<chances;i++){
+			students_allowed();
+
+		}
+		
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

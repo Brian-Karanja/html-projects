@@ -1,0 +1,76 @@
+      body{ 
+            background-image: url(earth.jpg );
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1700px;
+            border-color: red;
+            border-width: 3px;
+            border-style: solid;
+
+           }
+
+      a:link{
+                color: yellow;
+              }
+      a:visited{
+                  color: lightgreen;
+                  font-weight: bold;
+                line-height: 300%;
+                 }      
+         
+      
+      .title{color: red;
+              font-weight: bold;
+              font-size: 70px;
+              text-align: center;
+              text-decoration: underline;
+              
+             }
+
+      .subtitle{color: #E0281A;
+                font-weight: bold;
+                line-height: 20%;
+                font-size: 50px;
+                text-align: left;
+                font-style: italic;
+                text-decoration: underline;
+               }
+      .subsubtitle{color: #D0690D;
+                   font-weight: bold;
+                   line-height: 20%;
+                   font-size: 30px;
+                   text-align: left;
+                   text-decoration: underline;
+                }
+
+      .parag1{border-width: 2px;
+              border-color: black;
+              border-style: solid;
+              padding: 15px;
+              background-color: lightgreen;
+              margin: 20px;
+              margin-top:50px;
+              margin-left:400px: 
+             }
+
+       .ul  {border-width: 2px;
+              border-color: black;
+              border-style: solid;
+              padding: 15px;
+              background-color: lightgreen;
+              margin: 20px;
+              margin-top: 50px;
+              margin-left: 400px:
+             }
+
+      .image{display: block;
+              
+             max-width: 200px; 
+             max-height: 200px;
+             background-position: right;
+             top: 60px;
+             left: 90px;
+
+            }
+
+

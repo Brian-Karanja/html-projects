@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>leaflet</title>
+	<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
+	<script	src="leaflet/leaflet.js"></script>
+	<script src="data/county.geojson"></script>
+
+</head>
+<body>
+
+<div id="map" style="height:700px;"></div>
+
+    <script>
+		
+		var mapoptions={
+			center:[-0.3131,36.8948],
+			zoom:8
+		}
+
+		var map=new L.map("map",mapoptions);
+
+		var layer=new L.TileLayer("Http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+
+		//adding a marker1
+		map.addLayer(layer);
+		var marker =  new L.Marker([-1.5708480935151505,38.24340820312501]);
+		marker.addTo(map);
+
+
+   //adding a marker2
+		
+		var marker = new L.Marker([-0.387834,36.963924]);
+		marker.addTo(map);
+
+        //adding a county
+		var countyLayer = new L.geoJson(counties).addTo(map);
+
+		map.on('click', function(e)
+		{
+			new L.Marker([e.latlng.lat, e.latlng.lng]);
+			alert(e.latlng.lat + "," + e.latlng.lng);
+
+		});
+     
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://localhost:6991/cgi-bin/mapserv.exe?map=C:/ms4w/apps/lovelymaps/config.map&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=forest,railroad,airports&STYLES=&SRS=EPSG:4326&BBOX=97,5,106,21&WIDTH=600&HEIGHT=800&FORMAT=image/png
+
+
+
+
+MAP
+  MAP
+  FONTSET "fonts/fonts.list"
+  NAME Thailand
+  IMAGECOLOR 255 255 255
+  SIZE 600 800
+  IMAGETYPE PNG24 ## use AGG to for anti-aliassing
+    OUTPUTFORMAT
+    NAME 'AGG'
+    DRIVER AGG/PNG
+    MIMETYPE "image/png"
+    IMAGEMODE RGB
+    EXTENSION "png"
+  END # outputformat
+  PROJECTION
+   "init=epsg:4326" #latlon on WGS84
+  END
+  EXTENT 97.35 5.61 105.65 20.47 # lon/lat extents of Thailand
+  WEB
+    IMAGEPATH "c:/tmp/ms_tmp/"
+    IMAGEURL "/ms_tmp/"
+    METADATA
+      "map" "C:/ms4w/apps/lovelymaps/config.map"
+      "ows_schemas_location" "http://schemas.opengeospatial.net"
+      "ows_title" "Sample WMS"
+      "ows_onlineresource" "http://localhost:6991/cgi-bin/mapserv.exe?map=C:/ms4w/apps/lovelymaps/config.map&"
+      "ows_srs" "EPSG:4326 " #latlon 
+      "wms_enable_request" "*"      
+      "wms_feature_info_mime_type" "text/plain"
+      "wms_feature_info_mime_type" "text/html"
+      "wms_server_version" "1.1.1"
+      "wms_formatlist" "image/png,image/gif,image/jpeg"
+      "wms_format" "image/png"
+    END #metadata
+  END #web
+  LAYER
+    NAME "forest"
+    TYPE POLYGON
+    STATUS ON
+    DATA data/forest
+    METADATA
+      "ows_title" "forest"
+    END #metadata
+    PROJECTION
+      "init=epsg:4326"
+    END
+    CLASSITEM "FOR_TYPE"
+#use attribute "forest type" for classifying
+CLASS
+   NAME "Forest Reserve"
+   EXPRESSION 'FR' #if for_type=FR
+   COLOR 56 168 0
+END
+CLASS
+   NAME "National Park"
+   EXPRESSION 'NP' #if for_type=NP
+   COLOR 171 205 102 
+END
+CLASS
+   NAME "Wildlife Sanctuary"
+   EXPRESSION 'WS' #if for_type=WS
+   COLOR 245 245 122
+END
+CLASS
+   NAME "Not forest"
+   EXPRESSION 'NF' #if for_type=NF
+   COLOR 200 200 200
+END
+  END #layer forest
+  
+ LAYER
+    NAME railroad
+    TYPE LINE
+    STATUS ON
+    DATA data/railroad
+    METADATA
+      "ows_title" "railroad"   
+    END
+    PROJECTION
+     "init=epsg:4326"   
+    END
+    CLASS
+      NAME "railroad"
+      STYLE
+        COLOR 0 0 0
+        WIDTH 2
+      END #style
+    END #class
+  END #layer railroad
+
+
+ #SYMBOL
+#NAME "airport_sym"
+#FONT "ESRI_Default_Marker"
+#FILLED true
+#ANTIALIAS true
+#CHARACTER "o"
+#END #symbol
+   
+
+  SYMBOL
+   NAME "circle_sym"
+   TYPE ellipse
+   FILLED true
+    POINTS
+      1 1
+    END
+  END #symbol
+
+  LAYER
+    NAME airports
+    TYPE POINT
+    STATUS ON
+    DATA data/airports
+    METADATA
+      "ows_title" "airports"
+    END
+    PROJECTION
+      "init=epsg:4326"
+    END
+    LABELITEM "NameEnglis" #attribute to use
+    CLASS
+      NAME "airports"
+      STYLE
+        SYMBOL "circle_sym"
+        SIZE 22
+        COLOR 0 0 255
+      END #style
+      LABEL
+        COLOR 0 0 0
+        TYPE TRUETYPE
+        FONT "arial"
+        MINSIZE 6
+        MAXSIZE 12
+        POSITION AUTO
+        PARTIALS FALSE
+        BUFFER 4
+      END #label
+    END #class
+
+  END #layer airports
+
+LEGEND
+    KEYSIZE 16 12
+    LABEL 
+      COLOR 0 0 0
+      TYPE TRUETYPE
+      FONT "arial" 
+      SIZE 12
+    END #label
+    STATUS EMBED
+    POSITION UR
+  END #legend
+
+  SCALEBAR
+IMAGECOLOR 255 255 255
+LABEL
+COLOR 0 0 0
+TYPE TRUETYPE
+FONT "arial"
+SIZE 11
+END
+STYLE 1
+SIZE 150 2
+COLOR 255 0 0 
+UNITS KILOMETERS
+INTERVALS 2
+TRANSPARENT FALSE
+STATUS EMBED
+POSITION LR
+END #scalebar
+
+END #map
+
+ 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name = "viewport" content = "width=device-width,initial-scale=1"/>
+	<title>leaflet</title>
+	 <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
+	 <script type="text/javascript" src="leaflet/leaflet.js"></script>
+	 
+</head>
+<body>
+<h1 style="background-blend-mode: ">Dedan Kimathi Map</h1>
+
+<div id ='map' style="height: 550px; width: 150;"></div>
+<script>
+	// initialize the map on the "map" div with a given center and zoom
+var mapOptions = {
+    center: [-0.387834,36.963924],
+    zoom: 8
+};
+//creating a map object
+var map = new L.map('map',mapOptions);
+
+//creating the layer object
+var layer = L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+//adding layer to map
+map.addLayer(layer);
+
+//creating marker
+var mark =  L.Marker([0,36]);
+//adding marker to the map
+mark.addTo(map);
+
+
+
+</script>
+
+</body>
+</html>

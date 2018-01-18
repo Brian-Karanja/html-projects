@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>computer programming</title>
+</head>
+<body bgcolor="#CACED7">
+
+
+<h1><u><cite>GIS PROGRAMMING</cite></u></h1>
+<a href="homepage.html">click this to go back</a>
+
+<h3><em>Table Of Contents</em></h3><br>
+<a href="#1"><em>Why GIS programming</em></a><br>
+<a href="#2"><em>GIS Software Development Paradigms</em></a><br>
+<a href="#3"><em>Plug-ins and extensions</em></a><br>
+<a href="#4"><em>web-based mapping</em></a><br>
+<a href="#5"><em>Custom standalone applications</em></a><br>
+
+<hr>
+<h2><u>The need for GIS Programming and automation</u></h2>
+<p>A geographic information system (GIS) can manipulate and analyze spatial datasets with the purpose of solving geographic problems. GIS analysts perform all kinds of operations on data to make it useful for solving a focused problem. This includes clipping, re projecting, buffering, merging, mosaicking, extracting subsets of the data, and hundreds of other operations. In the ArcGIS software, these operations are known as geoprocessing and they are performed using tools.</p>
+
+
+<ul>
+<h3><u>There are several major benefits to automating tasks like this:</u></h3>
+<li>Automation makes work easier. Once you automate a process, you don't have to put as much effort remembering which tools to use or the proper sequence in which they should be run.</li>
+<li>Automation makes work faster. A computer can open and execute tools in sequence much faster than you can accomplish by pointing and clicking.</li>
+<li>Automation makes work more accurate. Any time you perform a manual task on a computer; there is a chance for error. The chance multiplies with the number and complexity of the steps in your analysis. In contrast, once an automated task is configured, a computer can be trusted to perform the same sequence of steps every time.</li>
+<li>Automation extends your GIS application. You may need to process data in a way that is not handled by your preferred GIS application, e.g. to simplify it for public consumption, or make it more versatile by adding additional buttons and menus). Such changes are referred to as customization. We will look at some examples of how extra features can be added to ArcGIS later in the course.</li>
+</ul>
+
+<a name="1"></a><h2><u>Why GIS programming</u></h2>
+<p>Most GIS users can do all they need to do using their preferred application program (e.g. ArcGIS, MapInfo, Idrisi, QGis, MapWindow e.t.c). They do not need to know anything about programming. However, there are situations where some knowledge of a programming language may be useful. If you have programming skills you can either write a stand-alone program to do the analysis or, in some situations, you might write some additional code which can be plugged into an existing application (e.g. an ArcGIS extension, QGis plugins or MapWindow Plugins e.t.c). Likewise, if you have the requisite programming skills, you may be able to change an application program’s interface.</p>
+
+<a name="2"></a><h2><u>GIS Software Development Paradigms</u></h2>
+<p>The geographic information systems (GIS) industry has largely been built upon a relatively small collection of very successful commercial GIS software products. In recent years, the commercial GIS software industry has been supplemented by a thriving free and open source GIS developer community. From the perspective of GIS tool software development these products generally fall in one of three categories that correspond to three unique GIS software development paradigms. These paradigms are:</p>
+<ol>
+<li>) development of plug-ins and extensions which add additional functionality to existing desktop GIS systems(e.g. an ArcGIS extension, QGis plugins or MapWindow Plugins e.t.c);</li>
+<li>) development of web-based mapping and data visualization tools; and</li>
+<li>) development of custom standalone applications using GIS programming components</li>
+</ol>
+<p>Perhaps the most successful company in all three categories is Environmental Systems Research Institute (ESRI) of Redlands, California. The ESRI flagship desktop GIS product, ArcGIS, is known worldwide for its data analysis capabilities. ArcGIS is used as a teaching and research platform in most major university geography programs, and the software is found in government agencies and large engineering and environmental consulting firms throughout the world. While ArcGIS is primarily a desktop data analysis package, it also is extensible through the development of extensions, scripts, and tools that can be written in several different languages. This extensibility has made ArcGIS a popular platform for distributing analytical tools, models, and other custom functionality to thirdparty End users.</p>
+
+
+<a name="3"></a><h2><u>Plug-ins and extensions</u></h2>
+<p>In spite of the noted downfalls, the “extension” or “plug-in” GIS software development paradigm does meet the need of many projects in particular the development of tools that are targeted at other GIS analysts.</p>
+<p>For example, a new spatial interpolation method that is likely to be used only by trained GIS analysts, is a good candidate tool to be built as a plug-in or extension to an existing GIS software package.</p>
+
+
+<a name="4"></a><h2><u>web-based mapping</u></h2>
+<p>Many software development and location based service provider companies have addressed this problem of needing to keep their map based applications simple by moving them to the Internet. Indeed, map-enabled web sites such as MapQuest (http://www.mapquest.com) and Google Maps (http://maps.google.com) have rapidly grown in popularity in recent years. Such sites provide general location information, driving directions and even satellite imagery when available. Also a variety of government agencies at all levels have also begun to distribute geospatial data on web-based maps. Such applications can be used to provide citizens with information as varied as census data, severe weather warnings, election results, and much more.</p>
+<p>Coincident with the current proliferation of map-based web sites, has come a proliferation of web-based GIS tools. ESRI produces the internet map server, ArcIMS, AutoDesk, Inc distributes a tool called MapGuide, and the University of Minnesota has led the open source movement in web-based GIS with its MapServer product. All of these tools follow a common development approach based largely on display of and relatively minimal interaction with static images generated by server based mapping engines.</p>
+<p>Many applications are suited to this software development paradigm. Certainly the best fitting GIS applications are those that require only minimal map interaction, and are focused primarily on the dissemination of data to a wide audience.</p>
+
+
+<a name="5"></a><h2><u>Custom standalone applications</u></h2>
+<p>The third GIS software development paradigm is development of custom standalone eapplications using GIS components. The governing premise of this paradigm is the need to place highly customized GIS enabled software tools on the desktop computers of end users. Many types of applications are well suited to this approach such as those that require significant user interaction and/or mobility and hence are less suited to development as web-based tools.<p>
+<p>Also, when the intention is the development of a highly customized GIS application with a unique or branded “look and feel”, then the standalone development approach is generally better than the plug-in or extension approach.</p>
+<p>Imagine a graphical user interface for the software that requires a single form with three separate maps, five buttons and six menu items.</p>
+<p>Ignoring for the moment exactly what the buttons and menu items will do and what will be displayed on the maps, it should be apparent that such a simple form does not necessarily require all of the overhead of a full GIS desktop application, and hence the standalone approach is more suitable than the plug-in or extension approach. Likewise, by simply adding the need for deployment of the software on ships that do not have live internet access, the standalone approach becomes clearly much more suitable than the web-based mapping paradigm.</p>
+
+<frameset cols="25%,50%,25%">
+  <frame src="frame_a.htm">
+  <frame src="frame_b.htm">
+  <frame src="frame_c.htm">
+</frameset>
+
+<hr>
+
+</body>
+</html>

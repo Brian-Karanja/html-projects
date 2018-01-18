@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+    <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
+	<script	src="leaflet/leaflet.js"></script>
+	<script src="data/county.geojson"></script>
+</head>
+
+<body>
+<h1>My Map</h1>
+<p><a href="../../home.html" class="btn btn-primary btn-sm">Home</a></p>
+<div id="map" style="height:500px;">
+	
+</div>
+
+<script>
+
+	var mapoption={
+		center:[-0.5987439850125229,39.49584960937501],
+		zoom:6
+		}
+
+	var map= new L.map("map",mapoption);
+
+	var layer=new L.TileLayer("Http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+
+	map.addLayer(layer);
+	var marker = new L.Marker([-1.2992050109940396,38.43017578125001]);
+	marker.addTo(map);
+
+	var countyLayer = new L.geoJson(counties).addTo(map);
+
+	map.on('click', function(e)
+	{
+		new L.Marker([e.latlng.lat,e.latlng.lng]);
+		alert(e.latlng.lat+","+e.latlng.lng);
+	});
+
+
+	</script>
+
+
+</body>
+</html>

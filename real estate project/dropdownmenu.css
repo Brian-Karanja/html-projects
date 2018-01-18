@@ -1,0 +1,36 @@
+
+ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul li{ 
+     background-color: black;
+     border: 1px solid white;/*draws a line btn the listed word*/
+     width: 120px;/*shortens the width*/
+     height: 30px;
+     line-height: 30px;/*makes them at the center*/
+     float: left;/*arranges them to the left*/
+     text-align: center; /*arranges the words to the center*/
+     list-style: none;/*removes the dots*/
+
+}
+
+ul li a{
+	color: white; /*changes the color of the link to white*/
+	text-decoration: none;/*removes the underlines*/ 
+	display: block;/*makes the hover takes the whole color of the block
+*/
+}
+
+ul li a:hover{ /*hover means an action to happen when the mouse is directed close*/
+    background-color: red;
+}
+
+ul li ul li{
+    display: none;
+}
+
+ul li:hover ul li{
+    display: block;/* makes the text appear*/
+}

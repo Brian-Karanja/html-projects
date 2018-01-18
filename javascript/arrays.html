@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>arrays</title>
+	<script type="text/javascript">
+
+var	family = new Array("brian","joy","kelvin","ireri","caro","candy");//declaring an array.(global variable)
+
+		function array1(){
+			var name1= "brian"
+			var name2= "joy"
+			var name3= "kelvin"
+			var name4= "Ireri"
+			var name5= "Caro"
+			var name6= "Candy"
+			document.write("Karanja's family is composed of:"+name1+name2+name3+name4+name5+name6)
+		}
+		//array1();
+
+		function array2()
+		{
+		
+		document.write("karanja's family is composed of : <br/>"+family);
+		document.write("<br/>"+family[2]);//[] is an array index
+
+		alert("loop array: "+family[1]);
+		document.write("<br> "+family.length);
+
+        for(var i=0; i<family.length;i++){
+        	document.write(family[i]+"<br/>");
+        	alert("the number of index "+[i]+" is "+family[i]);
+        }
+	
+
+        }
+        array2();
+
+        function forlooparray(){
+        	for(var j=2;j<family.length;j++){
+        		document.write(" index  " + [j] + " is "+family[j]+", ")
+        	}
+        }
+        forlooparray();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

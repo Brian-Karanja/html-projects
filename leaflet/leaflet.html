@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name = "viewport" content = "width=device-width,initial-scale=1"/>
+	<title>leaflet1</title>
+	<!--leaflet-->
+	<link rel="stylesheet" href="libraries/leaflet/leaflet.css"/>
+
+	<script src="libraries/leaflet/leaflet.js"></script>
+	<script src = "data/3500.geojson"></script>
+
+	<style type="text/css">
+		#map{height :400px;}
+	</style>
+
+	
+
+</head> 
+<body>
+<h1>My map</h1>
+
+<div id = "map"></div>
+
+<script>
+	var map=L.map('map').setView([-0.393833,36.964434],17);
+	var datalayer=L.geoJson(data).addTo(map);
+</script>
+		
+
+
+</body>
+</html>
